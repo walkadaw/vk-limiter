@@ -1,0 +1,57 @@
+{
+  "extensionName": {
+    "message": "VK limiter доступ только к музыке"
+  },
+
+  "extensionDescription": {
+    "message": "Ограничивает ваше проведенное время на сайте vk.com после превышения установленного лимита времени остается доступ к музыке"
+  },
+
+  "extensionTitle": {
+    "message": "VK limiter"
+  },
+
+  "stats_header": {
+    "message": "Статистика использования"
+  },
+
+  "stats_limit": {
+    "message": "лимит"
+  },
+
+  "stats_spend_time": {
+    "message": "Проведено времени сегодня"
+  },
+
+  "status_ignore": {
+    "message": "Игнорировать лимит"
+  },
+
+  "status_ignore_15": {
+    "message": "Напомнить через 15 минут"
+  },
+
+  "status_ignore_today": {
+    "message": "Игнорировать лимит на сегодня"
+  },
+
+  "days_week": {
+    "message": "ВС,ПН,ВТ,СР,ЧТ,ПТ,СБ"
+  },
+
+  "hour_short": {
+    "message": "ч"
+  },
+
+  "min_short": {
+    "message": "мин"
+  },
+
+  "options_time": {
+    "message": "Время ограничения:"
+  },
+
+  "options_message": {
+    "message": "Отображать сообщения в меню:"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "extensionName": {
+    "message": "VK limiter access only to music"
+  },
+
+  "extensionDescription": {
+    "message": "Functional limiter to vk.com after exceeding the set time, access to music remains."
+  },
+
+  "extensionTitle": {
+    "message": "VK limiter"
+  },
+
+  "stats_header": {
+    "message": "Usage statistics"
+  },
+
+  "stats_limit": {
+    "message": "limit"
+  },
+
+  "stats_spend_time": {
+    "message": "Spent time today"
+  },
+
+  "status_ignore": {
+    "message": "Ignore limit"
+  },
+
+  "status_ignore_15": {
+    "message": "Remind after 15 minutes"
+  },
+
+  "status_ignore_today": {
+    "message": "Ignore today limit"
+  },
+
+  "days_week": {
+    "message": "Su,Mo,Tu,We,Th,Fr,Sa"
+  },
+
+  "hour_short": {
+    "message": "h"
+  },
+
+  "min_short": {
+    "message": "min"
+  },
+
+  "options_time": {
+    "message": "Time limited:"
+  },
+
+  "options_message": {
+    "message": "Display messages in the menu:"
+  }
+}

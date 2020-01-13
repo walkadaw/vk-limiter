@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>VK Limiter Settings</title>
+  <script src="../js/i18n.js"></script>
+</head>
+
+<body>
+  <form>
+    <div class="row">
+      <label data-i18n="options_time">Время:</label>
+      <select name="hour" id="hour"></select>
+      <span data-i18n="hour_short">ч.</span>
+      <select name="minute" id="minute"></select>
+      <span data-i18n="min_short">мин.</span>
+    </div>
+    <div class="row">
+      <label for="l_msg" data-i18n="options_message">Отображать сообщения в меню</label>
+      <input type="checkbox" name="l_msg">
+    </div>
+  </form>
+</body>
+<script src="../js/options.js"></script>
+
+</html>

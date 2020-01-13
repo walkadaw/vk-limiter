@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html class="browser-action">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../css/browser-action.css" />
+  <script src="../js/i18n.js"></script>
+</head>
+
+<body>
+  <header>
+    <img src="../icons/logo.jpg">
+    <h1>VK Limiter</h1>
+    <button id="options"></button>
+  </header>
+  <main>
+    <div id="page-status">
+      <h2 class="big-header" data-i18n="stats_spend_time">Проведено времени сегодня</h2>
+      <strong id="timer"></strong>
+      <span class="limit" data-i18n="stats_limit">лимит</span>
+      <span id="time-limit" class="limit"></span>
+    </div>
+    <div id="page-info">
+      <div id="default-container">
+        <h2 data-i18n="stats_header">Статистика использования</h2>
+        <div id="stats-day" class="card"></div>
+      </div>
+    </div>
+
+    <div id="ignore">
+      <h2 data-i18n="status_ignore">Игнорировать лимит:</h2>
+      <button data-ignore-time="15" data-i18n="status_ignore_15">Напомнить через 15 минут</button>
+      <button data-ignore-time="1440" data-i18n="status_ignore_today">Игнорировать лимит на сегодня</button>
+    </div>
+
+
+  </main>
+
+  <script src="../js/browser-action.js"></script>
+</body>
+
+</html>
