@@ -1,7 +1,7 @@
 function translate() {
-  const i18nElements = document.querySelectorAll("[data-i18n]");
+  const i18nElements = document.querySelectorAll('[data-i18n]');
   i18nElements.forEach(element => {
-    const message = element.getAttribute("data-i18n");
+    const message = element.getAttribute('data-i18n');
     const text = browser.i18n.getMessage(message);
     if (text) {
       element.textContent = text;
@@ -9,4 +9,4 @@ function translate() {
   });
 }
 
-window.addEventListener("DOMContentLoaded", translate, true);
+window.addEventListener('DOMContentLoaded', translate, true);

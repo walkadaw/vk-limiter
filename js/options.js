@@ -1,14 +1,11 @@
-const hourElement = document.getElementById("hour");
-const minuteElement = document.getElementById("minute");
-const checkboxElements = document.querySelectorAll("[type=checkbox]");
+const hourElement = document.getElementById('hour');
+const minuteElement = document.getElementById('minute');
+const checkboxElements = document.querySelectorAll('[type=checkbox]');
 
 async function init() {
-  const saveElements = document.querySelectorAll("select, input");
+  const saveElements = document.querySelectorAll('select, input');
 
-  const {
-    timeLimiter = 0,
-    showNavigation = []
-  } = await browser.storage.local.get(["timeLimiter", "showNavigation"]);
+  const { timeLimiter = 0, showNavigation = [] } = await browser.storage.local.get(['timeLimiter', 'showNavigation']);
   const hour = Math.floor(timeLimiter / (60 * 60));
   const minute = Math.floor((timeLimiter - hour * 60 * 60) / 60);
 
@@ -16,24 +13,22 @@ async function init() {
   createOption(minuteElement, 60, minute);
 
   checkboxElements.forEach(element => {
-    const name = element.getAttribute("name");
+    const name = element.getAttribute('name');
     if (showNavigation.some(value => value === name)) {
-      element.setAttribute("checked", true);
+      element.setAttribute('checked', true);
     }
   });
 
-  saveElements.forEach(element =>
-    element.addEventListener("change", saveSettings)
-  );
+  saveElements.forEach(element => element.addEventListener('change', saveSettings));
 }
 
 function createOption(element, countOption, selected) {
   for (let i = 0; i < countOption; i++) {
-    const select = document.createElement("option");
+    const select = document.createElement('option');
     select.textContent = i;
-    select.setAttribute("value", i);
+    select.setAttribute('value', i);
     if (selected === i) {
-      select.setAttribute("selected", true);
+      select.setAttribute('selected', true);
     }
     element.appendChild(select);
   }
@@ -44,7 +39,7 @@ function saveSettings() {
 
   checkboxElements.forEach(element => {
     if (element.checked) {
-      showNavigation.push(element.getAttribute("name"));
+      showNavigation.push(element.getAttribute('name'));
     }
   });
 

@@ -10,15 +10,10 @@ const days = {
   stats: []
 };
 let intervalId = null;
+let sendMessageLimit = false;
 
 async function init() {
-  let {
-    date,
-    timeLimiter,
-    timeSpend = 0,
-    timeIgnore = 0,
-    statsDays = []
-  } = await browser.storage.local.get();
+  let { date, timeLimiter, timeSpend = 0, timeIgnore = 0, statsDays = [] } = await browser.storage.local.get();
 
   if (timeLimiter === undefined) {
     timeLimiter = 3600;
@@ -50,10 +45,10 @@ function onToggleTimer() {
 }
 
 function onUpdated(tabsId, changeInfo) {
-  if (tabsId && changeInfo.status === "complete") {
+  if (tabsId && changeInfo.status === 'complete') {
     startTimer();
     browser.tabs.sendMessage(tabsId, {
-      type: "changeLocation",
+      type: 'changeLocation',
       url: changeInfo.url
     });
   }
@@ -69,11 +64,10 @@ function onFocusChanged(focus) {
 
 function updateStore(event) {
   if (event.timeLimiter || event.timeIgnore) {
-    time.ignore =
-      (event.timeIgnore && event.timeIgnore.newValue) || time.ignore;
-    time.limit =
-      (event.timeLimiter && event.timeLimiter.newValue) || time.limit;
-    sendMessageToTabs("reset");
+    time.ignore = (event.timeIgnore && event.timeIgnore.newValue) || time.ignore;
+    time.limit = (event.timeLimiter && event.timeLimiter.newValue) || time.limit;
+    sendMessageLimit = false;
+    sendMessageToTabs('reset');
   }
 }
 
@@ -119,11 +113,9 @@ function startTimer() {
     intervalId = setInterval(() => {
       time.passed += 1;
 
-      if (
-        time.passed === time.limit ||
-        (time.passed > time.limit && getCurrentTime() === time.ignore)
-      ) {
-        sendMessageToTabs("limitReached");
+      if (!sendMessageLimit && time.passed > time.limit && getCurrentTime() === time.ignore) {
+        sendMessageLimit = true;
+        sendMessageToTabs('limitReached');
       }
 
       if (!(time.passed % UPDATE_TIME)) {
