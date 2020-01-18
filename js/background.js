@@ -113,7 +113,7 @@ function startTimer() {
     intervalId = setInterval(() => {
       time.passed += 1;
 
-      if (!sendMessageLimit && time.passed > time.limit && getCurrentTime() === time.ignore) {
+      if (!sendMessageLimit && time.passed > time.limit && getCurrentTime() > time.ignore) {
         sendMessageLimit = true;
         sendMessageToTabs('limitReached');
       }
